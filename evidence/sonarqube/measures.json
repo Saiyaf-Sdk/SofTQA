@@ -1,0 +1,76 @@
+{
+  "component": {
+    "key": "ec4206-nebo",
+    "name": "EC4206 Nebo Parfumerie",
+    "qualifier": "TRK",
+    "measures": [
+      {
+        "metric": "coverage",
+        "value": "59.2",
+        "bestValue": false
+      },
+      {
+        "metric": "code_smells",
+        "value": "1",
+        "bestValue": false
+      },
+      {
+        "metric": "duplicated_lines_density",
+        "value": "0.0",
+        "bestValue": true
+      },
+      {
+        "metric": "sqale_index",
+        "value": "20",
+        "bestValue": false
+      },
+      {
+        "metric": "sqale_rating",
+        "value": "1.0",
+        "bestValue": true
+      },
+      {
+        "metric": "bugs",
+        "value": "2",
+        "bestValue": false
+      },
+      {
+        "metric": "lines_to_cover",
+        "value": "903"
+      },
+      {
+        "metric": "uncovered_conditions",
+        "value": "37",
+        "bestValue": false
+      },
+      {
+        "metric": "branch_coverage",
+        "value": "77.0",
+        "bestValue": false
+      },
+      {
+        "metric": "uncovered_lines",
+        "value": "397",
+        "bestValue": false
+      },
+      {
+        "metric": "ncloc",
+        "value": "3279"
+      },
+      {
+        "metric": "vulnerabilities",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "conditions_to_cover",
+        "value": "161"
+      },
+      {
+        "metric": "line_coverage",
+        "value": "56.0",
+        "bestValue": false
+      }
+    ]
+  }
+}

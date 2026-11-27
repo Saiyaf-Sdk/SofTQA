@@ -1,0 +1,137 @@
+[
+  {
+    "key": "6ad4b1b6-bfb4-447a-9763-97a9f7ddbacb",
+    "rule": "javascript:S8786",
+    "severity": "MAJOR",
+    "component": "ec4206-nebo:server/api.mjs",
+    "project": "ec4206-nebo",
+    "line": 42,
+    "hash": "eff81639e5492d9f03dbc10e74199ecb",
+    "textRange": {
+      "startLine": 42,
+      "endLine": 42,
+      "startOffset": 7,
+      "endOffset": 35
+    },
+    "flows": [],
+    "status": "OPEN",
+    "message": "Simplify this regular expression to reduce its runtime, as it has super-linear performance due to backtracking.",
+    "effort": "20min",
+    "debt": "20min",
+    "author": "",
+    "tags": [
+      "regex",
+      "performance"
+    ],
+    "creationDate": "2026-11-24T15:17:30+0000",
+    "updateDate": "2026-11-24T15:17:30+0000",
+    "type": "CODE_SMELL",
+    "scope": "MAIN",
+    "quickFixAvailable": false,
+    "messageFormattings": [],
+    "codeVariants": [],
+    "cleanCodeAttribute": "EFFICIENT",
+    "cleanCodeAttributeCategory": "INTENTIONAL",
+    "impacts": [
+      {
+        "softwareQuality": "RELIABILITY",
+        "severity": "MEDIUM"
+      }
+    ],
+    "issueStatus": "OPEN",
+    "prioritizedRule": false,
+    "fromSonarQubeUpdate": false,
+    "internalTags": [],
+    "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+    "key": "4e04932d-6d5b-4fbf-8442-330071fff2c2",
+    "rule": "typescript:S9011",
+    "severity": "MAJOR",
+    "component": "ec4206-nebo:src/components/layout/AppFooter.vue",
+    "project": "ec4206-nebo",
+    "line": 31,
+    "hash": "ea5ea5cd4e0e9503c6c7157084ded1cb",
+    "textRange": {
+      "startLine": 31,
+      "endLine": 31,
+      "startOffset": 14,
+      "endOffset": 76
+    },
+    "flows": [],
+    "status": "OPEN",
+    "message": "Add an explicit \"type\" attribute to this button.",
+    "effort": "2min",
+    "debt": "2min",
+    "author": "",
+    "tags": [
+      "vue",
+      "react"
+    ],
+    "creationDate": "2026-11-24T15:17:30+0000",
+    "updateDate": "2026-11-24T15:17:30+0000",
+    "type": "BUG",
+    "scope": "MAIN",
+    "quickFixAvailable": false,
+    "messageFormattings": [],
+    "codeVariants": [],
+    "cleanCodeAttribute": "LOGICAL",
+    "cleanCodeAttributeCategory": "INTENTIONAL",
+    "impacts": [
+      {
+        "softwareQuality": "RELIABILITY",
+        "severity": "MEDIUM"
+      }
+    ],
+    "issueStatus": "OPEN",
+    "prioritizedRule": false,
+    "fromSonarQubeUpdate": false,
+    "internalTags": [],
+    "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+    "key": "4b39e72d-e997-405b-8a9b-9e3012f125c9",
+    "rule": "typescript:S9011",
+    "severity": "MAJOR",
+    "component": "ec4206-nebo:src/views/LoginView.vue",
+    "project": "ec4206-nebo",
+    "line": 43,
+    "hash": "87576461f7af53ff2e961608d0eec2f4",
+    "textRange": {
+      "startLine": 43,
+      "endLine": 43,
+      "startOffset": 10,
+      "endOffset": 58
+    },
+    "flows": [],
+    "status": "OPEN",
+    "message": "Add an explicit \"type\" attribute to this button.",
+    "effort": "2min",
+    "debt": "2min",
+    "author": "",
+    "tags": [
+      "vue",
+      "react"
+    ],
+    "creationDate": "2026-11-24T15:17:30+0000",
+    "updateDate": "2026-11-24T15:17:30+0000",
+    "type": "BUG",
+    "scope": "MAIN",
+    "quickFixAvailable": false,
+    "messageFormattings": [],
+    "codeVariants": [],
+    "cleanCodeAttribute": "LOGICAL",
+    "cleanCodeAttributeCategory": "INTENTIONAL",
+    "impacts": [
+      {
+        "softwareQuality": "RELIABILITY",
+        "severity": "MEDIUM"
+      }
+    ],
+    "issueStatus": "OPEN",
+    "prioritizedRule": false,
+    "fromSonarQubeUpdate": false,
+    "internalTags": [],
+    "linkedTicketStatus": "NOT_LINKED"
+  }
+]

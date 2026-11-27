@@ -1,0 +1,16 @@
+
+> nebo-parfumerie@1.0.0 test
+> node --test server/store.test.mjs
+
+✔ pricing rounds once per unit and applies the catalog shipping and voucher rules (0.9733ms)
+✔ guest bag, sign-in merge, saved items, checkout retries and private order history survive restart (374.8062ms)
+✔ a stock conflict rolls back every line and keeps the bag available for correction (49.2089ms)
+✔ upgrading a mixed catalog retires other merchandise while preserving perfume stock and receipts (32.1801ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 719.9161

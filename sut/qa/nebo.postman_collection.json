@@ -1,0 +1,212 @@
+{
+  "info": {
+    "name": "EC4206 Nebo API tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:4276"
+    },
+    {
+      "key": "knownProduct",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "API-01 Five catalog products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/products"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"API-01 Five catalog products response status\", () => pm.response.to.have.status(200));",
+              "const products = pm.response.json();",
+              "pm.test(\"Exactly five products with distinct integer IDs\", () => pm.expect(products.length === 5 && new Set(products.map(p => p.id)).size === 5 && products.every(p => Number.isInteger(p.id))).to.equal(true));",
+              "pm.collectionVariables.set('knownProduct', String(products[0].id));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-02 Existing product",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/products/{{knownProduct}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"API-02 Existing product response status\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Detail matches requested ID\", () => pm.expect(pm.response.json().id).to.equal(Number(pm.collectionVariables.get('knownProduct'))));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-03 Missing product",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/products/999999"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"API-03 Missing product response status\", () => pm.response.to.have.status(404));",
+              "pm.test(\"Friendly not-found response\", () => pm.expect(pm.response.json().message).to.equal('Product not found.'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "EP-01 Valid newsletter",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-Lumen-Request",
+            "value": "1"
+          }
+        ],
+        "url": "{{baseUrl}}/api/newsletter",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\" qa-news@example.test \"}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"EP-01 Valid newsletter response status\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Response contract\", () => pm.expect(pm.response.json().subscribed).to.equal(true));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "EP-02 Missing domain separator",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-Lumen-Request",
+            "value": "1"
+          }
+        ],
+        "url": "{{baseUrl}}/api/newsletter",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"qa-news@example\"}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"EP-02 Missing domain separator response status\", () => pm.response.to.have.status(400));",
+              "pm.test(\"Response contract\", () => pm.expect(pm.response.json().message).to.equal('Enter a valid email address.'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "EP-03 Wrong newsletter type",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-Lumen-Request",
+            "value": "1"
+          }
+        ],
+        "url": "{{baseUrl}}/api/newsletter",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":42}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"EP-03 Wrong newsletter type response status\", () => pm.response.to.have.status(400));",
+              "pm.test(\"Response contract\", () => pm.expect(pm.response.json().message).to.equal('Enter a valid email address.'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "EP-04 Newsletter duplicate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-Lumen-Request",
+            "value": "1"
+          }
+        ],
+        "url": "{{baseUrl}}/api/newsletter",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"QA-NEWS@example.test\"}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"EP-04 Newsletter duplicate response status\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Response contract\", () => pm.expect(pm.response.json().subscribed).to.equal(true));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

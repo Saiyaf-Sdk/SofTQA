@@ -1,0 +1,10 @@
+
+> nebo-parfumerie@1.0.0 test:bdd
+> node qa/with-server.mjs bdd
+
+Nebo Parfumerie: http://127.0.0.1:54929
+............
+
+2 scenarios (2 passed)
+12 steps (12 passed)
+0m 2.913s (0m 2.896s executing your code)

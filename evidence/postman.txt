@@ -1,0 +1,65 @@
+
+> nebo-parfumerie@1.0.0 test:postman
+> node qa/with-server.mjs postman --reporters cli,json --reporter-json-export ../.tools/newman.json
+
+Nebo Parfumerie: http://127.0.0.1:54930
+(node:18692) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+EC4206 Nebo API tests
+
+→ API-01 Five catalog products
+  GET http://127.0.0.1:54930/api/products [200 OK, 3.69kB, 34ms]
+  √  API-01 Five catalog products response status
+  √  Exactly five products with distinct integer IDs
+
+→ API-02 Existing product
+  GET http://127.0.0.1:54930/api/products/6 [200 OK, 877B, 4ms]
+  √  API-02 Existing product response status
+  √  Detail matches requested ID
+
+→ API-03 Missing product
+  GET http://127.0.0.1:54930/api/products/999999 [404 Not Found, 276B, 3ms]
+  √  API-03 Missing product response status
+  √  Friendly not-found response
+
+→ EP-01 Valid newsletter
+  POST http://127.0.0.1:54930/api/newsletter [200 OK, 256B, 26ms]
+  √  EP-01 Valid newsletter response status
+  √  Response contract
+
+→ EP-02 Missing domain separator
+  POST http://127.0.0.1:54930/api/newsletter [400 Bad Request, 288B, 5ms]
+  √  EP-02 Missing domain separator response status
+  √  Response contract
+
+→ EP-03 Wrong newsletter type
+  POST http://127.0.0.1:54930/api/newsletter [400 Bad Request, 288B, 4ms]
+  √  EP-03 Wrong newsletter type response status
+  √  Response contract
+
+→ EP-04 Newsletter duplicate
+  POST http://127.0.0.1:54930/api/newsletter [200 OK, 256B, 3ms]
+  √  EP-04 Newsletter duplicate response status
+  √  Response contract
+
+┌─────────────────────────┬──────────────────┬──────────────────┐
+│                         │         executed │           failed │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              iterations │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│                requests │                7 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│            test-scripts │                7 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│      prerequest-scripts │                0 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              assertions │               14 │                0 │
+├─────────────────────────┴──────────────────┴──────────────────┤
+│ total run duration: 610ms                                     │
+├───────────────────────────────────────────────────────────────┤
+│ total data received: 4.25kB (approx)                          │
+├───────────────────────────────────────────────────────────────┤
+│ average response time: 11ms [min: 3ms, max: 34ms, s.d.: 12ms] │
+└───────────────────────────────────────────────────────────────┘

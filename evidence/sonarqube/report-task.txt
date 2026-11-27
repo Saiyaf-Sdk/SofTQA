@@ -1,0 +1,6 @@
+projectKey=ec4206-nebo
+serverUrl=http://127.0.0.1:9036
+serverVersion=26.11.0.134175
+dashboardUrl=http://127.0.0.1:9036/dashboard?id=ec4206-nebo
+ceTaskId=c9325505-b878-4ee9-a5c8-df77d08cb0c9
+ceTaskUrl=http://127.0.0.1:9036/api/ce/task?id=c9325505-b878-4ee9-a5c8-df77d08cb0c9

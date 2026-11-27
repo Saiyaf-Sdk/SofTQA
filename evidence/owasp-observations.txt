@@ -1,0 +1,6 @@
+EC4206 targeted OWASP observations. Loopback, synthetic guest sessions.
+Browsed source server/api.mjs and server/auth.mjs for ownership, hashing and cookie policy.
+A04 COOKIE_SECURE=false | HTTP 200 | lumen_session=[redacted]; Max-Age=2592000; Path=/; Expires=Thu, 24 Dec 2026 15:03:08 GMT; HttpOnly; SameSite=Lax
+A01 anonymous order history | HTTP 401
+A01 valid guest order history | HTTP 401 | {"message":"Sign in to see your orders."}
+A04 COOKIE_SECURE=true | HTTP 200 | lumen_session=[redacted]; Max-Age=2592000; Path=/; Expires=Thu, 24 Dec 2026 15:03:08 GMT; HttpOnly; Secure; SameSite=Lax

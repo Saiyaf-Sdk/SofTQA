@@ -1,0 +1,11 @@
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using D:\Projects\STQA\Test_Cases\performance/catalog-load.jmx
+Starting standalone test @ 2026 Nov 25 21:29:21 IST (1795622361878)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary =     50 in 00:00:06 =    8.9/s Avg:     2 Min:     1 Max:    26 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 25 21:29:27 IST (1795622367533)
+... end of run

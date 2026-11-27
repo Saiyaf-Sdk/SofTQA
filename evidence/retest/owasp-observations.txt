@@ -1,0 +1,9 @@
+Manual observations | 25 November 2026 | OWASP Top 10:2025
+Source review | password derivation uses scrypt and a random 16-byte salt.
+Source review | order history query filters by the session shopper.
+SEC-02 COOKIE_SECURE=false | HTTP 200
+  lumen_session=[redacted]; Max-Age=2592000; Path=/; HttpOnly; SameSite=Lax
+SEC-01 Anonymous order history | HTTP 401
+SEC-01 Normal guest order history | HTTP 401 | {"message":"Sign in to see your orders."}
+SEC-02 COOKIE_SECURE=true | HTTP 200
+  lumen_session=[redacted]; Max-Age=2592000; Path=/; HttpOnly; Secure; SameSite=Lax

@@ -1,0 +1,136 @@
+{
+  "name": "Nebo QA",
+  "id": 45420909420,
+  "run_number": 1,
+  "event": "push",
+  "head_branch": "ec4206-assignment",
+  "head_sha": "55fe1bff0af5b1e53fcd891b6d5e7e9d79a0bbbf",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/Saiyaf-Sdk/STQA/actions/runs/45420909420",
+  "created_at": "2026-11-24T15:02:47Z",
+  "updated_at": "2026-11-24T15:04:01Z",
+  "jobs": [
+    {
+      "id": 138539840295,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Saiyaf-Sdk/STQA/actions/runs/45420909420/job/138539840295",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-24T15:02:51Z",
+          "completed_at": "2026-11-24T15:02:52Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-24T15:02:52Z",
+          "completed_at": "2026-11-24T15:02:53Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-24T15:02:53Z",
+          "completed_at": "2026-11-24T15:02:54Z"
+        },
+        {
+          "name": "Run npm ci",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-24T15:02:54Z",
+          "completed_at": "2026-11-24T15:03:05Z"
+        },
+        {
+          "name": "Run npm run build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-24T15:03:05Z",
+          "completed_at": "2026-11-24T15:03:16Z"
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-24T15:03:16Z",
+          "completed_at": "2026-11-24T15:03:40Z"
+        },
+        {
+          "name": "Run npm run test:coverage",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-24T15:03:40Z",
+          "completed_at": "2026-11-24T15:03:42Z"
+        },
+        {
+          "name": "Run npm run test:e2e",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-24T15:03:42Z",
+          "completed_at": "2026-11-24T15:03:51Z"
+        },
+        {
+          "name": "Run npm run test:bdd",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-24T15:03:51Z",
+          "completed_at": "2026-11-24T15:03:54Z"
+        },
+        {
+          "name": "Run npm run test:postman",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-24T15:03:54Z",
+          "completed_at": "2026-11-24T15:03:56Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-24T15:03:56Z",
+          "completed_at": "2026-11-24T15:03:57Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-11-24T15:03:57Z",
+          "completed_at": "2026-11-24T15:03:59Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22,
+          "started_at": "2026-11-24T15:03:59Z",
+          "completed_at": "2026-11-24T15:03:59Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23,
+          "started_at": "2026-11-24T15:03:59Z",
+          "completed_at": "2026-11-24T15:03:59Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+.tools/
+sut/coverage/
+sut/node_modules/
+sut/dist/
+sut/test-results/
+sut/playwright-report/
+sut/.scannerwork/
+*.log.tmp

@@ -1,0 +1,40 @@
+
+> nebo-parfumerie@1.0.0 test:coverage
+> c8 --all --include=server/** --include=shared/** --exclude=server/**/*.test.mjs --extension=.ts --extension=.mjs --reporter=text --reporter=lcov --reporter=json-summary node --test server/store.test.mjs server/pricing.qa.test.mjs
+
+✔ WB-01 verifies every total component (1.3784ms)
+✔ WB-02 verifies every total component (0.087ms)
+✔ WB-03 verifies every total component (0.0488ms)
+✔ WB-04 verifies every total component (0.0394ms)
+✔ WB-05 verifies every total component (0.0528ms)
+✔ WB-06 verifies every total component (0.0566ms)
+✔ WB-07 verifies every total component (0.0407ms)
+✔ WB-08 verifies every total component (0.0965ms)
+✔ WB-09 verifies every total component (0.0893ms)
+✔ WB-10 verifies every total component (0.0545ms)
+✔ WB-11 rounds the unit discount to the nearest cent (0.3854ms)
+✔ pricing rounds once per unit and applies the catalog shipping and voucher rules (1.6322ms)
+✔ guest bag, sign-in merge, saved items, checkout retries and private order history survive restart (331.7919ms)
+✔ a stock conflict rolls back every line and keeps the bag available for correction (48.7812ms)
+✔ upgrading a mixed catalog retires other merchandise while preserving perfume stock and receipts (36.6749ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 724.8963
+---------------|---------|----------|---------|---------|-------------------------
+File           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s       
+---------------|---------|----------|---------|---------|-------------------------
+All files      |   87.54 |    77.01 |   94.44 |   87.54 |                         
+ server        |   87.32 |    75.65 |   93.75 |   87.32 |                         
+  api.mjs      |   96.47 |    68.47 |     100 |   96.47 | 120-122,183-185,189-191 
+  auth.mjs     |     100 |     92.3 |     100 |     100 | 19                      
+  database.mjs |    98.3 |       85 |     100 |    98.3 | 56-57                   
+  index.mjs    |       0 |        0 |       0 |       0 | 1-61                    
+  orders.mjs   |     100 |    88.46 |     100 |     100 | 12,20-21                
+ shared        |     100 |      100 |     100 |     100 |                         
+  pricing.ts   |     100 |      100 |     100 |     100 |                         
+---------------|---------|----------|---------|---------|-------------------------

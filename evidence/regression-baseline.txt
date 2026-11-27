@@ -1,0 +1,51 @@
+[WebServer] (node:23836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:24428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\regression.spec.mjs:3:1 › STQA-01 header search focuses the field on every activation (5.8s)
+(node:8432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 tests\regression.spec.mjs:16:1 › UX-02 quick view returns keyboard focus to its opener after Escape (583ms)
+
+
+  1) tests\regression.spec.mjs:3:1 › STQA-01 header search focuses the field on every activation ───
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('textbox', { name: 'Search perfumes' })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('textbox', { name: 'Search perfumes' }) with timeout 5000ms
+      - waiting for getByRole('textbox', { name: 'Search perfumes' })
+        14 × locator resolved to <input value="" aria-label="Search perfumes" placeholder="Search perfumes, houses or notes"/>
+           - unexpected value "inactive"
+
+
+       9 |   await expect(search).toBeFocused();
+      10 |   await searchLink.press('Enter');
+    > 11 |   await expect(search).toBeFocused();
+         |                        ^
+      12 |   await page.keyboard.type('bergamot');
+      13 |   await expect(search).toHaveValue('bergamot');
+      14 | });
+        at D:\Projects\QAST\STQA\sut\tests\regression.spec.mjs:11:24
+
+    Error Context: test-results\regression-STQA-01-header--2cd43-e-field-on-every-activation\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\regression-STQA-01-header--2cd43-e-field-on-every-activation\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\regression-STQA-01-header--2cd43-e-field-on-every-activation\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\regression.spec.mjs:3:1 › STQA-01 header search focuses the field on every activation ────
+  1 passed (10.0s)

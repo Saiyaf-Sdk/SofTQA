@@ -1,0 +1,32 @@
+
+> nebo-parfumerie@1.0.0 test:e2e
+> playwright test
+
+[WebServer] (node:20072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 15 tests using 3 workers
+
+(node:23584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:17632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  2 tests\input-boundaries.spec.mjs:15:3 › BVA-07 registration password length 7 (52ms)
+  ok  4 tests\input-boundaries.spec.mjs:15:3 › BVA-08 registration password length 8 (57ms)
+  ok  5 tests\input-boundaries.spec.mjs:15:3 › BVA-09 registration password length 9 (48ms)
+  ok  6 tests\input-boundaries.spec.mjs:15:3 › BVA-127 registration password length 127 (96ms)
+  ok  7 tests\input-boundaries.spec.mjs:15:3 › BVA-128 registration password length 128 (83ms)
+  ok  8 tests\input-boundaries.spec.mjs:15:3 › BVA-129 registration password length 129 (40ms)
+  ok  9 tests\input-boundaries.spec.mjs:31:3 › STOCK-01 bag quantity relative to current stock -1 (35ms)
+  ok 10 tests\input-boundaries.spec.mjs:31:3 › STOCK-02 bag quantity relative to current stock 0 (50ms)
+  ok 11 tests\input-boundaries.spec.mjs:31:3 › STOCK-03 bag quantity relative to current stock 1 (43ms)
+  ok  3 tests\regression.spec.mjs:3:1 › STQA-01 header search focuses the field on every activation (1.6s)
+  ok 13 tests\regression.spec.mjs:24:1 › UX-02 quick view returns keyboard focus to its opener after Escape (660ms)
+  ok 12 tests\input-boundaries.spec.mjs:48:1 › EP-05 and EP-06 blank and unsupported vouchers leave totals unchanged (1.7s)
+  ok  1 tests\storefront.spec.mjs:3:1 › home, search, scent families, sort, galleries and recovery pages (2.8s)
+  ok 14 tests\storefront.spec.mjs:50:1 › guest shopping, registration, voucher, checkout, order history and returning sign-in (2.3s)
+  ok 15 tests\storefront.spec.mjs:104:1 › mobile navigation, layout, theme and newsletter (1.4s)
+
+  15 passed (8.5s)
